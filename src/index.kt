@@ -39,19 +39,17 @@ fun maxElement(list: Array<Int>): Int {
     return max
 }
 
-fun fibonacci(count: Int): List<Int> {
-    val sequence = mutableListOf(0, 1)
+fun fibonacci(term: Int): Int {
+  var prevTerm = 0
+  var currentTerm = 1
 
-    if (count <= 2) {
-      return sequence.take(count)
-    }
+  for (i in 2 .. term) {
+    val next = prevTerm + currentTerm
+    prevTerm = currentTerm
+    currentTerm = next
+  }
 
-    for (i in 2 until count) {
-      val nextFib = sequence[i - 1] + sequence[i - 2]
-      sequence.add(nextFib)
-    }
-
-    return sequence
+  return currentTerm
 }
 
 fun palindrome(text: String): Boolean {
