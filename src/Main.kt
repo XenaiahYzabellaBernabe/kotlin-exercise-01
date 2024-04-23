@@ -39,14 +39,14 @@ fun maxElement(list: Array<Int>): Int {
     return max
 }
 
-fun fibonacci(n: Int): List<Int> {
+fun fibonacci(count: Int): List<Int> {
     val sequence = mutableListOf(0, 1)
 
-    if (n <= 2) {
-        return sequence.take(n)
+    if (count <= 2) {
+        return sequence.take(count)
     }
 
-    for (i in 2 until n) {
+    for (i in 2 until count) {
         val nextFib = sequence[i - 1] + sequence[i - 2]
         sequence.add(nextFib)
     }
