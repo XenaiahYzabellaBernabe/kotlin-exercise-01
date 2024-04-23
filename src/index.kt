@@ -29,26 +29,26 @@ fun reverseString(text: String): String {
 }
 
 fun maxElement(list: Array<Int>): Int {
-    var max = list[0]
-    for (number in list) {
-        if (number > max) {
-            max = number
-        }
+  var max = list[0]
+  for (number in list) {
+    if (number > max) {
+      max = number
     }
+  }
 
     return max
 }
 
-fun fibonacci(n: Int): List<Int> {
+fun fibonacci(count: Int): List<Int> {
     val sequence = mutableListOf(0, 1)
 
-    if (n <= 2) {
-        return sequence.take(n)
+    if (count <= 2) {
+      return sequence.take(count)
     }
 
-    for (i in 2 until n) {
-        val nextFib = sequence[i - 1] + sequence[i - 2]
-        sequence.add(nextFib)
+    for (i in 2 until count) {
+      val nextFib = sequence[i - 1] + sequence[i - 2]
+      sequence.add(nextFib)
     }
 
     return sequence
@@ -94,7 +94,7 @@ fun vowelCount(text: String): Int {
   for (letter in text) {
     if (letter in vowels) {
       count++
-      }
+    }
   }
 
   return count
